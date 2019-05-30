@@ -1,0 +1,2 @@
+class Grpup < ApplicationRecord
+end
