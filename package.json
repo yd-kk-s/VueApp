@@ -1,5 +1,7 @@
-  {
+{
   "name": "VueApp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "vue-router": "^3.0.6"
+  }
 }

@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
@@ -20,22 +20,22 @@ module.exports = {
       },
       {
         test: /\.(scss|css)/,
+        exclude: /node_modules/,
         use: [
             'style-loader',
             {
-                loader: 'css-loader',
-                options: {
-                    url: false,
-                    sourceMap: true,
-                    importLoaders: 2
-                },
+              loader: 'css-loader',
+              options: {
+                  url: false,
+                  sourceMap: true,
+                  importLoaders: 2
+              }
             },
         ]
       }
     ]
   },
   plugins: [
-    // make sure to include the plugin!
     new VueLoaderPlugin(),
     new ExtractTextPlugin("style.css")
   ]
