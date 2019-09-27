@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'messages#index'
-  get "messages", to: 'messages#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'groups', to: 'groups#index'
+  resources :groups, only: %i[new create] do
+    resources :messages, only: :index
+  end
   mount ActionCable.server => '/cable'
 end

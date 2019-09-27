@@ -1,0 +1,14 @@
+<div class="sidebar">
+  <p>グループ作成</p>
+    <%= form_tag('/groups', method: :post) do %>
+    <input placeholder="group name" type="text" name="name">
+    <input type="submit" value="作成">
+    <% end %>
+  <p class="gruop" >
+    <div>
+      <% @groups.each do |group| %>
+      <%= simple_format(group.name) %>
+      <% end %>
+    </div>
+  </p>
+</div>

@@ -4,6 +4,8 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create(message: data['message'])
+    id = data['group_id']['id']
+    @group = Group.find(id)
+    @group.messages.create(message: data['message'])
   end
 end
